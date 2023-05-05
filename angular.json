@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tp-sala-juegos:build:production",
+            "firebaseProject": "tp-sala-juegos-d8705",
+            "firebaseHostingSite": "tp-sala-juegos-d8705"
+          }
         }
       }
     }

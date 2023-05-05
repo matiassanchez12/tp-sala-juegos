@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tp-sala-juegos-d8705": {
+      "hosting": {
+        "tp-sala-juegos": [
+          "tp-sala-juegos-d8705"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tp-sala-juegos-d8705"
+  }
+}
