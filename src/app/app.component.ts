@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DbServiceService } from './services/db-service.service';
+import { DbService } from './services/db-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,20 +8,15 @@ import { DbServiceService } from './services/db-service.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  public isModalLoginOpen: boolean = false;
   public openOptionsMovie: boolean = false;
   public openOptionsActors: boolean = false;
   public subscriptionArrrayMovies: Subscription = new Subscription();
 
-  constructor(private bdService: DbServiceService) {}
+  constructor() {}
 
-  public getMovies() {}
-
-  public toggleOptionsMovie() {
-    this.openOptionsMovie = !this.openOptionsMovie;
-  }
-
-  public toggleOptionsActors() {
-    this.openOptionsActors = !this.openOptionsActors;
+  openModalLogin() {
+    this.isModalLoginOpen = false;
   }
 
   public handleBlurModal(modal: string) {
@@ -31,6 +26,9 @@ export class AppComponent {
         break;
       case 'actors':
         if (this.openOptionsActors) this.openOptionsActors = false;
+        break;
+      case 'login':
+        if (this.isModalLoginOpen) this.isModalLoginOpen = false;
         break;
       default:
         break;
